@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Übung 4</title>
+</head>
+<body>
+ <div class="container">
+      <h1>Teilnehmerin Registrierung</h1>
+     <div class="row">
+        <div class="my-3 col-12 col-sm-6 col-md-4 col-lg-3">
+            <input class="form-control" type="text" placeholder="First name" id="first"/>
+        </div>
+        <div class="my-3 col-12 col-sm-6 col-md-4 col-lg-3">
+             <input class="form-control" type="text" placeholder="Last name" id="last"/>
+        </div>
+         <div class="my-3 col-12 col-sm-6 col-md-4 col-lg-3">
+         <input class="form-control" type="email" placeholder="E-Mail" id="email"/>
+         </div>
+         <div class="my-3 col-12 col-sm-6 col-md-4 col-lg-3">
+         <input class="form-control" type="text" placeholder="IP-Address" id="ipaddr"/>
+        </div>
+         <div class="my-3 col-12 col-sm-6 col-md-4 col-lg-3">
+             <input class="btn btn-secondary" type="text" value="Abbrechen"/>
+         </div>
+         <div class="my-3 col-12 col-sm-6 col-md-4 col-lg-3">
+             <input onclick="register()" class="btn btn-success" type="text" value="Registrieren"/>
+         </div>
+     </div>
+     <h1> Eingegebene Werte</h1>
+ </div>
+<script>
+    function register()
+    {
+        console.log("Registrieren geclickt");
+        let firstInput = document.getElementById('first');
+        let firstValue = firstInput.value;
+        let lastValue = document.querySelector('#last').value;
+        let emailValue = document.querySelector('#email').value;
+        let ipaddrValue = document.querySelector('#ipaddr').value;
+        // EIngaben auf Konsole ausgeben
+        console.log('firstValue : ', firstValue)
+        console.log('lastValue : ', lastValue)
+        console.log('emailValue : ', emailValue)
+        console.log('ipaddrValue : ', ipaddrValue)
+
+        if (firstValue == "")
+        {
+            firstInput.classList.remove('is-valid')
+            firstInput.classList.add('is-invalid')
+        }
+        else
+        {
+            firstInput.classList.remove('is-invalid')
+            firstInput.classList.add('is-valid')
+        }
+        let output = document.getElementById('output');
+        output.innerHTML = `
+         <ul>
+            <li>${firstValue}</li>
+            <li>${lastValue}</li>
+            <li>${emailValue}</li>
+            <li>${ipaddrValue}</li>
+         </ul>`;
+
+    }
+    </script>
+</body>
+</html>
