@@ -1,2 +1,5 @@
 .idea
-<EOF>
+node_modules/**
+:W
+
+
